@@ -1,0 +1,13 @@
+Eli Goodwin 
+1.29.17
+CS 261
+
+Assignment 2:
+
+1. Each time there is a resize of the array there is an additional cost to write the previous values to the newly sized array. If size is equal to 8 and a 9th term is to be added the cost of writing the 9th term is 9, adding a 17th term will cost 17. The total cost of adding 32 elements to an empty array would be an additional 24 writes making 56 the total cost. 
+
+As n grows large the the big-oh complexity of pushing into an array becomes a constant time operation.
+
+2. Increasing the array size by 2 each it is full is not an efficient means of managing the dynamic array. Doing this would result in 260 additional writes, As n grows large the big-oh complexity would become O(n).
+
+3. If you are pushing into an array that is currently at capacity and popping consecutively, the array will double in size followed by an immediate halving of the array leading to  O(n^2) time complexity. To reduce the complexity of the operations the array reduction condition must be changed from size <= 1/2 cap  to size <= 1/4, this would prevent cycling between immediate shrinking and expansion of the container. 
